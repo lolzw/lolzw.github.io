@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本类标签</title>
+    <link href="https://fonts.font.im/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <script>
+        console.log('head')
+    </script>
+</head>
+<script>
+    console.log('head~body')
+</script>
+<body>
+
+<h1>location222222</h1>
+<img src="IMG_2533的副本.JPG" alt="">
+<h1>主标题</h1>
+<h2>顶层标题</h2>
+<h3>子标题</h3>
+<h4>次子标题</h4>
+
+<p>这是一个段落</p>
+
+<p>Mozilla 是一个全球社区，这里聚集着来自五湖四海的</p>
+
+<ul>
+    <li>技术人员</li>
+    <li>思考者</li>
+    <li>建造</li>
+</ul>
+
+<p>我们致力于……</p>
+
+<a href="https://www.mozilla.org/zh-CN/about/manifesto/">Mozilla 宣言</a>
+<!--a 链接-->
+<a href="#product">锚点</a>
+<h1>hi</h1>
+<h6 id="product"></h6>
+<a href="https://www.bing.com"> target="_" 当前窗口 新标签页打开</a>
+<a href="https://www.bing.com" target="_top">_top 当前标签页打开</a>
+<a href="https://www.bing.com" target="_blank">_blank 打开新窗口</a>
+
+<blockquote cite="bing.com">
+    <p>就没有天才</p>
+</blockquote>
+
+<cite> 鲁迅 </cite>
+
+<p><cite>维基百科</cite>上说JavaScript <q>最初命名为Mocha</q></p>
+
+
+<p>猫是可爱         的动物</p>
+<pre>猫是可爱         的动物</pre>
+<p>猫是可爱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;的动物</p>
+<p>猫是可爱         的动物</p>
+<p>猫是可爱         的>动物</p>
+<p>猫<em>是</em>可爱的动物</p>
+<p>猫是可爱的<strong>动物</strong></p>
+
+<button>切换用户</button>
+</body>
+</html>
+<script>
+    // let myHeading2= document.querySelector('h1');
+    // myHeading2.textContent = 'Hello worl2222d!222';
+    // console.log('body~style')
+    // document.querySelector('html').onclick = () => {
+    //     alert('点击屏幕')
+    // }
+
+    let myImage = document.querySelector(`img`)
+    myImage.onclick = () => {
+        let mySrc = myImage.getAttribute('src')
+        if (mySrc === 'IMG_2533的副本.JPG') {
+            myImage.setAttribute('src', 'IMG_2152.JPG')
+        }else  {
+            myImage.setAttribute('src', 'IMG_2533的副本.JPG')
+        }
+    }
+
+    let myButton = document.querySelector('button')
+    myButton.onclick = setUserName
+    let myHeading = document.querySelector('h1')
+    function setUserName() {
+        let name = prompt('请输入你的名字')
+        name = name ? name : ''
+        localStorage.setItem('name', name)
+        myHeading.textContent = '火狐很帅哦，' + (name);
+
+    }
+
+    if (!localStorage.getItem('name')) {
+        setUserName()
+    } else  {
+        let name = localStorage.getItem('name')
+        name = name ? name : ''
+        myHeading.textContent = '火狐很帅哦，' + (name);
+    }
+</script>
+<style>
+    html {
+        font-size: 10px;
+        font-family: 'Open Sans', sans-serif;
+        background-color: #00879f;
+    }
+    body {
+        width: 600px;
+        background-color: aquamarine;
+        margin: 0px auto;
+        padding: 0 20px 20px 20px;
+        border: 5px solid black;
+    }
+    h1 {
+        font-size: 60px;
+        text-align: center;
+
+        margin: 0;
+        padding: 20px 0;
+        color: #00539f;
+        text-shadow: 3px 3px 1px black;
+    }
+    img {
+        width: 400px;
+        height: 300px;
+        display: block;
+        margin: 0 auto;
+    }
+    p, li {
+        font-size: 16px;
+        line-height: 2;
+        letter-spacing: 1px;
+    ;
+    }
+    a[target] {
+        color: green;
+    }
+</style>
+
